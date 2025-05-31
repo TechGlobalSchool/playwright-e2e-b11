@@ -13,7 +13,7 @@ test.describe('Playwright Navigations', () => {
     expect(await page.title()).toBe('Apple');
   });
 
-  test.only('Browser Navigations', async({ page }) => {
+  test('Browser Navigations', async({ page }) => {
     await page.goto('https://www.google.com/');
     await page.goto('https://www.apple.com/');
 
@@ -25,5 +25,5 @@ test.describe('Playwright Navigations', () => {
 
     // Navigate forward
     await page.goForward();
-  })
+  });
 });
