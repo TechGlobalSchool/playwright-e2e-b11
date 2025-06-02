@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('Playwright Navigations', () => {
+test.describe('Playwright Navigations @Regression', () => {
   test('Url and title validation', async({ page }) => {
     await page.goto('https://www.google.com/');
 
