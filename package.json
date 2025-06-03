@@ -2,6 +2,7 @@
   "name": "playwright-e2e-b11",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "npx playwright test",
     "test:uimode": "npx playwright test --ui",
