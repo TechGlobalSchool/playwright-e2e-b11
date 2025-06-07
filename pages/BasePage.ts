@@ -27,4 +27,20 @@ export class BasePage {
   async wait(seconds: number) {
     await this.page.waitForTimeout(seconds * 1000);
   }
+
+  async waitForHeading() {
+    await Promise.any([
+      this.page.waitForSelector('h1'),
+      this.page.waitForSelector('h2'),
+      this.page.waitForSelector('h3')
+    ])  
+  }
+
+  async waitForPageLoad(seconds = 5) {
+    await this.page.waitForLoadState('load', { timeout: seconds }); 
+  }
+
+  async waitForPageDOMContent(seconds = 5) {
+    await this.page.waitForLoadState('domcontentloaded', { timeout: seconds }); 
+  }
 }

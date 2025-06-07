@@ -18,7 +18,6 @@ const frontendPracticePageTexts: string[] = [
 test.describe("POM Testing", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
-    console.log(page.url());
   });
 
   frontendPracticePageTexts.forEach((frontendPracticePageText) => {
