@@ -5,12 +5,16 @@ export class BasePage {
   readonly testingDropdown: Locator;
   readonly testingDropdownFrontendOption: Locator;
   readonly testingDropdownBackendOption: Locator;
+  readonly mockInterviewsLink: Locator;
+  readonly mainHeading: Locator;
   
   constructor(page: Page) {
     this.page = page;
     this.testingDropdown = this.page.locator('#dropdown-testing');
     this.testingDropdownFrontendOption = this.page.locator('#frontend-option');
     this.testingDropdownBackendOption = this.page.locator('#backend-option');
+    this.mockInterviewsLink = this.page.locator('[class^="Header_menus"]').getByRole('link', { name: 'Mock Interviews' });
+    this.mainHeading = this.page.locator('h1').first();
   }
 
   async selectFrontendOption() {

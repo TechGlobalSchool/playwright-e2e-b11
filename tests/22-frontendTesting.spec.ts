@@ -10,7 +10,7 @@ it.describe('Frontend Testing Page verification', () =>{
     basePage = new BasePage(page);
     frontendTestingPage = new FrontendTestingPage(page);
 
-    await page.goto('/');
+    await page.goto('https://www.techglobal-training.com');
     await basePage.selectFrontendOption();
   });
 
