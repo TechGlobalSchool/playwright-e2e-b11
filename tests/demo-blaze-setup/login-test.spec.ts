@@ -8,5 +8,6 @@ test('Login', async ({ page }) => {
   await page.getByRole('button', { name: 'Log in' }).click();
   await expect(page.getByRole('link', { name: 'Log out' })).toBeVisible();
 
-  //await page.waitForTimeout(3000);
+  // Create & Save auth storage state
+  await page.context().storageState({ path: './tests/auth/demo-blaze.json' });
 });
