@@ -42,8 +42,22 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'Basics',
+      testDir: './tests/basics',
+      use: { 
+        ...devices['Desktop Chrome'],
+        // baseURL: "https://www.techglobal-training.com",
+        headless: true
+      },
+    },
+    {
+      name: 'Demo Blaze',
+      testDir: './tests/demo-blaze',
+      use: { 
+        ...devices['Desktop Chrome'],
+        baseURL: "https://demoblaze.com/index.html#",
+        headless: false
+      },
     },
 
     // {
