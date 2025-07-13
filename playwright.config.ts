@@ -42,12 +42,19 @@ export default defineConfig({
     //baseURL: process.env.baseURL, // "https://www.techglobal-training.com"
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: 'retain-on-failure',
     navigationTimeout: 30000
   },
 
   /* Configure projects for major browsers */
   projects: [
+    {
+      name: 'Regression',
+      use: {
+        ...devices["Desktop Chrome"],
+        viewport: { width: 1920, height: 1080 }
+      }
+    },
     {
       name: 'Basics',
       testDir: './tests/basics',
@@ -93,9 +100,19 @@ export default defineConfig({
       name: 'DB Automation',
       testDir: './tests/db-automation',
       use: { 
-        ...devices['Desktop Chrome']
+        ...devices['Desktop Chrome'],
+        viewport: {width: 1920, height: 1080 }
       },
-    }
+    },
+
+    // {
+    //   name: 'API Automation',
+    //   testDir: './tests/api',
+    //   use: { 
+    //     ...devices['Desktop Chrome'],
+    //     viewport: {width: 1920, height: 1080 }
+    //   },
+    // }
 
     // {
     //   name: 'firefox',

@@ -1,11 +1,8 @@
-import { test as base, expect, Page } from '@playwright/test';
+import { test as base, Page } from '@playwright/test';
 import { BasePage } from '../pages/BasePage';
 import { FrontendTestingPage } from '../pages/FrontendTestingPage';
 import { BackendTestingPage } from '../pages/BackendTestingPage';
 import { MockInterviewsLoginPage } from '../pages/MockInterviewsLoginPage';
-
-import dotenv from 'dotenv';
-dotenv.config();
 
 type PageFixture = {
   basePage: BasePage,
@@ -47,4 +44,4 @@ export const test = base.extend<PageFixture>({
   }
 });
 
-export { expect };
+export { expect } from '@playwright/test';
